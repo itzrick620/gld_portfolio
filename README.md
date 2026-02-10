@@ -1,3 +1,2 @@
-# gld_portfolio
-Graduation with Leadership Distinction in Professional and Civic Engagement
-This portfolio was done in conjunction with UNIV 401 at the University of South Carolina
+# ePortfolio for Graduation with Leadership Distinction in Professional and Civic Engagement
+Done in conjunction with UNIV 401 at the University of South Carolina in the Spring 2026 semester.

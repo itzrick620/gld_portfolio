@@ -140,6 +140,11 @@ p {
     font-size: 1.1rem;
 }
 
+/* Handles the very first/standalone paragraphs */
+p + p {
+    text-indent: 30px;
+    margin-top: 0;
+}
 /* =========================================
    4. Cards & Grids (Insights & Leadership)
    ========================================= */

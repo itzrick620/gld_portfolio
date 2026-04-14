@@ -178,6 +178,8 @@ nav {
 
 #nav-links > li > a:hover,
 #nav-links > li > a:focus-visible,
+.dropdown:hover > .dropbtn,
+.dropdown:focus-within > .dropbtn,
 .dropdown.open > .dropbtn {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.12);
@@ -287,12 +289,26 @@ nav {
         padding: 0 !important;
     }
 
-    .dropdown.open .dropdown-menu {
-        display: none;
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: -0.5rem;
+        right: -0.5rem;
+        height: 16px;
+    }
+
+    .dropdown-menu {
+        top: calc(100% + 0.35rem);
     }
 
     .dropdown:hover .dropdown-menu,
-    .dropdown:focus-within .dropdown-menu {
+    .dropdown:focus-within .dropdown-menu,
+    .dropdown.open .dropdown-menu {
         display: block;
     }
 }
@@ -478,7 +494,25 @@ li {
 }
 
 /* =========================================
-   6. Content Cards
+   6. Key Insight Image Section
+   ========================================= */
+.insight-gallery {
+    margin-top: 2.5rem;
+}
+
+.insight-gallery h2 {
+    margin-top: 0;
+}
+
+.insight-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* =========================================
+   7. Content Cards
    ========================================= */
 .card {
     margin-top: 1.8rem;
@@ -503,7 +537,7 @@ li {
 }
 
 /* =========================================
-   7. Contact Form
+   8. Contact Form
    ========================================= */
 #contact-form {
     display: flex;
@@ -576,7 +610,7 @@ form button:focus-visible {
 }
 
 /* =========================================
-   8. Artifact Section
+   9. Artifact Section
    ========================================= */
 .artifact-section {
     margin-top: 3.5rem;
@@ -798,7 +832,7 @@ form button:focus-visible {
 }
 
 /* =========================================
-   9. Footer
+   10. Footer
    ========================================= */
 footer {
     margin-top: 4rem;
@@ -848,7 +882,7 @@ footer {
 }
 
 /* =========================================
-   10. Responsive Styles
+   11. Responsive Styles
    ========================================= */
 @media (max-width: 960px) {
     main.container {
@@ -868,7 +902,8 @@ footer {
         min-height: 280px;
     }
 
-    .site-gallery-grid {
+    .site-gallery-grid,
+    .insight-gallery-grid {
         grid-template-columns: 1fr;
     }
 }
